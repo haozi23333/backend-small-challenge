@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package school;
+
+service SchoolService {
+  rpc SchoolStatus(SchoolByName) returns (School){}
+  rpc CloseSchool(CloseSchoolByName) returns (School){}
+  rpc OpenSchool(CloseSchoolByName) returns (School){}
+}
+
+message CloseSchoolByName {
+  string name = 1;
+}
+
+message OpenSchoolByName {
+  string name = 1;
+}
+
+message SchoolByName {
+  string name = 1;
+}
+
+message School {
+  string name = 1;
+  int32 status = 2;
+}

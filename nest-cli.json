@@ -1,0 +1,35 @@
+{
+  "collection": "@nestjs/schematics",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/user-client/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "projects": {
+    "school-server": {
+      "type": "application",
+      "root": "apps/school-server",
+      "entryFile": "main",
+      "sourceRoot": "apps/school-server/src",
+      "compilerOptions": {
+        "assets": ["./*.proto"],
+        "tsConfigPath": "apps/school-server/tsconfig.app.json"
+      }
+    },
+    "user-client": {
+      "type": "application",
+      "root": "apps/user-client",
+      "entryFile": "main",
+      "sourceRoot": "apps/user-client/src",
+      "compilerOptions": {
+        "assets": [
+          "./*.proto",
+          "./*.graphql"
+        ],
+        "tsConfigPath": "apps/user-client/tsconfig.app.json"
+      }
+    }
+  },
+  "root": "apps/school-client",
+  "sourceRoot": "apps/user-client/src"
+}

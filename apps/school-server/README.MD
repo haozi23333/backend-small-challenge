@@ -1,0 +1,38 @@
+# SCHOOL SERVER 
+
+GRPC  端口在 `3002`
+
+## 服务
+
+* [x] SchoolStatus (查询学校状态)
+* [x] OpenSchool (上学)
+* [ ] CloseSchool (放学) 
+
+```protobuf
+syntax = "proto3";
+
+package school;
+
+service SchoolService {
+  rpc SchoolStatus(SchoolByName) returns (School){}
+  rpc CloseSchool(CloseSchoolByName) returns (School){}
+  rpc OpenSchool(CloseSchoolByName) returns (School){}
+}
+
+message CloseSchoolByName {
+  string name = 1;
+}
+
+message OpenSchoolByName {
+  string name = 1;
+}
+
+message SchoolByName {
+  string name = 1;
+}
+
+message School {
+  string name = 1;
+  int32 status = 2;
+}
+```

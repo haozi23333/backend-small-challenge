@@ -1,0 +1,12 @@
+type Query {
+    school(name: String!): School
+}
+
+type School {
+    name: String
+    status: Int
+}
+
+type Mutation {
+    openSchool(name: String!): School
+}

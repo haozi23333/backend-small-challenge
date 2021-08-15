@@ -5,7 +5,7 @@ import { CqrsModule } from '@nestjs/cqrs';
 import OpenSchoolHandler, {
   OpenSchoolEventHandler,
 } from './school-server.handler';
-import { GetSchoolStatusQueryHandler } from "./school-server.query";
+import { GetSchoolStatusQueryHandler } from './school-server.query';
 
 const CommandHandlers = [OpenSchoolHandler];
 

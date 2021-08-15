@@ -2,8 +2,7 @@ import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
 import SchoolRepository from './schoolList';
 
 export class GetSchoolStatusQuery {
-  constructor(public name: string) {
-  }
+  constructor(public name: string) {}
 }
 
 @QueryHandler(GetSchoolStatusQuery)
